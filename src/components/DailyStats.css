@@ -1,0 +1,277 @@
+.daily-stats {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.main-stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-ring {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.progress-ring svg {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: #E5E7EB;
+  stroke-width: 8;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: #6366F1;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #6366F1;
+  line-height: 1;
+}
+
+.progress-label {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calorie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.calorie-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.calorie-consumed {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1F2937;
+  line-height: 1;
+}
+
+.calorie-separator {
+  font-size: 1.5rem;
+  color: #9CA3AF;
+  font-weight: 300;
+}
+
+.calorie-total {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.calorie-label {
+  font-size: 0.9rem;
+  color: #9CA3AF;
+  margin-top: 0.25rem;
+}
+
+.macro-stats {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.macro-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: #F9FAFB;
+  border-radius: 12px;
+  min-width: 100px;
+}
+
+.macro-icon {
+  font-size: 1.5rem;
+}
+
+.macro-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.macro-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.macro-label {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.budget-section {
+  background: #F9FAFB;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.budget-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.budget-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.budget-progress-bar {
+  height: 8px;
+  background: #E5E7EB;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10B981, #34D399);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.budget-progress-fill.over-budget {
+  background: linear-gradient(90deg, #EF4444, #F87171);
+}
+
+.budget-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.budget-remaining {
+  color: #6B7280;
+}
+
+.remaining-amount {
+  font-weight: 700;
+  color: #10B981;
+}
+
+.over-amount {
+  font-weight: 700;
+  color: #EF4444;
+}
+
+.budget-percentage {
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.meals-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meals-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meals-progress-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.meals-progress-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.meals-progress-bar {
+  height: 6px;
+  background: #E5E7EB;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.meals-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366F1, #818CF8);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .main-stat {
+    justify-content: center;
+  }
+  
+  .macro-stats {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .macro-stats {
+    flex-direction: column;
+  }
+  
+  .macro-item {
+    width: 100%;
+  }
+}
