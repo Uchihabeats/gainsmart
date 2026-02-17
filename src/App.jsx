@@ -350,8 +350,8 @@ const philippineWeightGainFoods = [
   }
 ]
 
-// LLM-style recommendation engine
-const getAIRecommendations = (budget, targetCalories, mealType = null) => {
+// LLM-style recommendation engine (exported for tests)
+export const getAIRecommendations = (budget, targetCalories, mealType = null) => {
   const foods = mealType 
     ? philippineWeightGainFoods.filter(f => f.category === mealType)
     : philippineWeightGainFoods
@@ -545,7 +545,7 @@ function App() {
 
       <footer className="footer">
         <p>© 2026 GainSmart PH - AI-Powered Weight Gain for Filipinos</p>
-        <p className="footer-note">Prices based on Philippine economy • Powered by Kimi AI Recommendations</p>
+        <p className="footer-note">Prices based on Philippine economy • Powered by AI Recommendations</p>
       </footer>
     </div>
   )
